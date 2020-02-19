@@ -1,13 +1,18 @@
 // set up mysql connection
 let mysql = require('mysql');
 
-let connection = mysql.createConnection({
-    host: 'localhost',
-    port: 3306,
-    user: 'root',
-    password: 'darkSalmon520!!!',
-    database: 'burgers_db'
-});
+
+if (process.env.JAWSDB_URL) { 
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+    let connection = mysql.createConnection({
+        host: 'localhost',
+        port: 3306,
+        user: 'root',
+        password: 'darkSalmon520!!!',
+        database: 'burgers_db'
+    });
+};
 
 // make connection
 connection.connect(function(err) {
