@@ -1,0 +1,85 @@
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: lemonchiffon;
+}
+
+h1 {
+    font-family: 'Noto Serif', serif;
+    font-size: 3em;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Noto Serif', serif;
+}
+
+.burgerWrapper {
+    width: 90%;
+    display: block;
+    height: auto;
+    margin: 1em auto; 
+    overflow: auto;
+}
+
+ul {
+    width: calc(50% - 20px);
+    float: left;
+    padding: 1em 2em;
+    box-sizing: border-box;
+    background-color: white;
+    margin: 10px;
+}
+
+li {
+    line-height: 35px;
+}
+
+.burger-icon {
+    display: block;
+    width: 200px;
+    height: auto;
+    margin: 1em auto;
+}
+
+form {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+}
+
+input {
+    font-size: 1em;
+    padding: .5em 1em;
+    border-radius: 5px;
+    border: 1px solid black;    
+}
+
+button {
+    display: block;
+    margin: 1em auto;
+    border: none;
+    border-radius: 5px;
+    background-color: #67b18b;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;    
+}
+
+.minibutton {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 5px;
+    font-size: .8em;
+}
+
+@media only screen and (max-width: 729px) {
+    ul {
+        width: 100%;
+    }
+}

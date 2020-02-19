@@ -4,23 +4,25 @@ let orm = require('../config/orm.js');
 let burger = {
     all: function(cb) {
         orm.all('burgers', function(res) {
+            console.log(res);
             cb(res);
         });
     },
-    create: function(cols, vals, cb) {
-        orm.create('burgers', cols, cals, function(res) {
+    create: function(burgerName, vals, cb) {
+        orm.create('burgers', burgerName, vals, function(res) {
+            console.log(res);
             cb(res);
         });
     },
-    update: function(objColVals, condition, cb) {
-        orm.update('burgers', objColVals, condition, function(res) {
+    update: function(burgerName, vals, cb) {
+        orm.update('burgers', burgerName, vals, function(res) {
             cb(res);
         });
     },
-    delete: function(condition, cb) {
-        orm.delete('burgers', condition, function(res) {
+    delete: function(burgerName, cb) {
+        orm.delete('burgers', burgerName, function(res) {
             cb(res);
-        });
+        })
     }
 };
 

@@ -2,30 +2,39 @@
 let connection = require('../config/connection.js');
 
 let orm = {
-    selectAll: function(burgerName, cb) {
-        let queryStr = 'SELECT * FROM burgers_db';
-        connection.query(queryStr, [burgerName, cb], function(err,result) {
-            if (err) throw err; 
-            console.log(results);
+    all: function(burgerName, cb) {
+        let queryStr = 'SELECT * FROM ' + burgerName + ';';
+        connection.query(queryStr, function(err,result) {
+            if (err) { throw err; } 
+            cb(result);
         });
     },
-    insertOne: function (burgerName, cb) {
-        let queryStr = 'INSERT INTO burgers (burger_name, devoured) VALUES (?, ?)';
+    create: function(burgerName, vals, cb) {
+        let queryStr = "INSERT INTO " + burgerName + " (burger_name, devoured) VALUES ('" + vals[0] + "', 0);"
+        
         console.log(queryStr);
 
-        connection.query(queryStr, [burgerName, cb], function(err, result) {
-            if (err) throw err;
-            console.log(result);
+        connection.query(queryStr, vals, function(err, result) {
+            if (err) { throw err; }
+            cb(result);
         });
     },
-    updateOne: function(burgerName,update) {
-        let queryStr = 'SELECT ? FROM burgers_db WHERE ?';
+    update: function(burgerName, obj, condition, cb) {
+        console.log('condition jenna ' + condition)
+        let queryStr = "UPDATE " + burgerName + " SET devoured = 1 WHERE id = " + condition + ";";
 
         console.log(queryStr);
 
-        connection.query(queryStr, [burgerName, update], function(err, result) {
-            if (err) throw err;
-            console.log(result);
+        connection.query(queryStr, function(err, result) {
+            if (err) { throw err; }
+            cb(result);
+        });
+    },
+    delete: function(burgerName, cb) {
+        let queryStr = 'DELETE FROM burgers WHERE burger_name = ' + burgerName;
+        connection.query(queryStr, function(err,result) {
+            if (err) { throw err; } 
+            cb(result);
         });
     }
 }; 

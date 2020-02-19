@@ -15,7 +15,7 @@ app.use(express.json());
 // set handlebars
 let exphbs = require('express-handlebars');
 
-app.engine('handlebars', exphbs ({ defaultLayout: 'main'}));
+app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 // import routes & give server access
