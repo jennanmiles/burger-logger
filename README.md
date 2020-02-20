@@ -8,9 +8,11 @@ Eat-Da-Burger is a restaurant app for burger lovers everywhere. The app allows u
 * takes input from user via ajax call on click
 * adds and updates the burger database
 * uses handlebars to serve the views 
+* uses controllers to implement routes
+* responsive styling
 
 ## links
 project folder: https://github.com/jennanmiles/burger-logger
-heroku: 
+heroku: https://intense-ravine-40516.herokuapp.com/ 
 added to portfolio: https://jennanmiles.github.io/
 
